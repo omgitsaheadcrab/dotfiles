@@ -1,0 +1,199 @@
+[general]
+monitor = LVDS1
+
+[fonts]
+font-0 = "DejaVuSans-Bold:size=9;1"
+font-1 = "Material Icons:size=10;1"
+font-2 = "Hack:size=10;1"
+font-3 = "Wuncon Siji:pixelsize=10;0"
+font-4 = "Font Awesome 5 Free:style=regular:size=10;0"
+font-5 = "Font Awesome 5 Free:style=solid:size=10;0"
+font-6 = "Font Awesome 5 Brands:size=10;0"
+font-7 = "Ionicons:style=Medium:size=10;0"
+
+[colors]
+fg = #ffffff
+bg = #000000
+unfocused = #555555
+
+[bar/top]
+enable-ipc = true
+monitor = ${general.monitor}
+width = 100%
+height = 18
+border-size = 0
+offset-y = 2
+
+padding-left = 0
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 0
+
+font-0 = ${fonts.font-0}
+font-1 = ${fonts.font-1}
+font-2 = ${fonts.font-2}
+font-3 = ${fonts.font-3}
+font-4 = ${fonts.font-4}
+font-5 = ${fonts.font-5}
+font-6 = ${fonts.font-6}
+font-7 = ${fonts.font-7}
+
+modules-left = 
+modules-center = date
+modules-right = volume backlight battery
+
+override-redirect = true
+wm-restack = i3
+
+[bar/bottom]
+monitor = ${general.monitor}
+bottom = true
+width = 100%
+height = 20
+
+border-size = 0
+
+spacing = 3
+padding-left = 0
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = ${fonts.font-0}
+font-1 = ${fonts.font-1}
+font-2 = ${fonts.font-2}
+font-3 = ${fonts.font-3}
+font-4 = ${fonts.font-4}
+font-5 = ${fonts.font-5}
+font-6 = ${fonts.font-6}
+font-7 = ${fonts.font-7}
+
+tray-position = right
+tray-transparent = true
+tray-detatched = false
+
+modules-left =
+modules-center = i3
+modules-right =
+
+override-redirect = true
+wm-restack = i3
+
+[module/backlight]
+type = internal/xbacklight
+output = ${general.monitor}
+format = <ramp>
+ramp-0 = 
+ramp-0-foreground = ${colors.fg}
+ramp-1 = 
+ramp-1-foreground = ${colors.fg}
+ramp-2 = 
+ramp-2-foreground = ${colors.fg}
+
+interactive = true
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+enable-click = true
+enable-scroll = false
+wrapping-scroll = false
+
+fuzzy-match = true
+
+format = <label-state> <label-mode>
+
+label-mode = %mode%
+label-mode-padding = 0
+label-mode-background = #e60053
+
+label-focused = %icon%
+label-focused-foreground = ${colors.fg}
+label-focused-background = ${colors.bg}
+label-focused-padding = 1
+
+label-unfocused = %icon%
+label-unfocused-foreground = ${colors.unfocused}
+label-unfocused-background = ${colors.bg}
+label-unfocused-padding = 1
+
+label-urgent-foreground = ${colors.fg}
+label-urgent-background = ${colors.bg}
+label-urgent-padding = 1
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+
+[module/date]
+type = internal/date
+interval = 1
+format = %{A1:~/.config/polybar/calendar.sh:} <label> %{A}
+format-padding = 5
+format-background = ${colors.bg}
+format-foreground = ${colors.fg}
+
+date = %A, %b. %d%
+time = %H:%M:%S
+
+label = %date%  %time%
+label-font = 0
+label-foreground = ${colors.fg}
+
+
+[module/volume]
+type = internal/pulseaudio
+
+sink = default
+interval = 5
+
+format-volume = %{A3:~/.config/polybar/vmixer.sh:} <ramp-volume> %{A}
+label-muted = 
+label-muted-foreground = ${colors.fg}
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-foreground = ${colors.fg}
+
+
+[module/battery]
+type = internal/battery
+full-at = 98
+
+format-charging = <animation-charging>
+format-discharging = <ramp-capacity> 
+format-full = <ramp-capacity>
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+; Only applies if <animation-discharging> is used
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+; Framerate in milliseconds
+animation-discharging-framerate = 500
