@@ -119,10 +119,11 @@ label-unfocused-foreground = ${colors.unfocused}
 label-unfocused-background = ${colors.bg}
 label-unfocused-padding = 1
 
-label-urgent-foreground = ${colors.fg}
+label-urgent = %icon%
+label-urgent-foreground = ${colors.unfocused}
 label-urgent-background = ${colors.bg}
 label-urgent-padding = 1
-
+label-urgent-overline = ${colors.unfocused}
 ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
