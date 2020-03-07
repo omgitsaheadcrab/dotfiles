@@ -272,7 +272,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -325,7 +325,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (load-file "~/.config/dotfiles/personal-config.el")
+  (load-file "~/.spacemacs.d/personal-config.el")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
