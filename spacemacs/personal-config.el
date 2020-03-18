@@ -32,3 +32,4 @@
 (global-company-mode)
 (global-button-lock-mode)
 
+(setq counsel-find-file-ignore-regexp "\\.pyc\\'")
