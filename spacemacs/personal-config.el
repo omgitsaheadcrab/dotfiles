@@ -4,6 +4,7 @@
 (setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
 (global-set-key (kbd "C-z") 'undo)
 
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (defun count-occurences (regex string)
   (recursive-count regex string 0))
@@ -13,7 +14,7 @@
     0))
 (setq dmesg-out
       (shell-command-to-string "/usr/bin/dmesg"))
-(setq hhkb-times 
+(setq hhkb-times
       (count-occurences "HHKB" dmesg-out))
 (if (> hhkb-times 0)
     (progn
