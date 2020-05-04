@@ -21,7 +21,6 @@ unset PL {F,B}{N,R,G,Y,B,P,C,W}           # dont clutter env
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
-export CLOUDSDK_PYTHON=/usr/bin/python2
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 
