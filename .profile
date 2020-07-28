@@ -1,4 +1,6 @@
 force_color_prompt=yes
+# enable ** for recursive globbing
+shopt -s globstar
 
 [ -e "$HOME/.dircolors" ] && DIR_COLORS="$HOME/.dircolors"
 [ -e "$DIR_COLORS" ] || DIR_COLORS=""
@@ -31,3 +33,6 @@ if [ -f ‘/usr/local/programs/google-cloud-sdk/path.bash.inc’ ]; then . ‘/u
 # The next line enables shell command completion for gcloud.
 if [ -f ‘/usr/local/programs/google-cloud-sdk/completion.bash.inc’ ]; then . ‘/usr/local/programs/google-cloud-sdk/completion.bash.inc’; fi
 [[ -r “/usr/local/etc/profile.d/bash_completion.sh” ]] && . “/usr/local/etc/profile.d/bash_completion.sh”
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
