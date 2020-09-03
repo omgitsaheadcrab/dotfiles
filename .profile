@@ -26,7 +26,7 @@ export LANGUAGE=en_US.UTF-8
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 
-PATH=$PATH:$HOME/Documents/Codes/bin:/usr/bin/vendor_perl:/usr/local/programs/google-cloud-sdk/bin:$HOME/.local/bin
+PATH=$PATH:/usr/local/programs/google-cloud-sdk/bin:$HOME/.local/bin
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f ‘/usr/local/programs/google-cloud-sdk/path.bash.inc’ ]; then . ‘/usr/local/programs/google-cloud-sdk/path.bash.inc’; fi
