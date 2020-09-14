@@ -34,5 +34,10 @@ if [ -f ‘/usr/local/programs/google-cloud-sdk/path.bash.inc’ ]; then . ‘/u
 if [ -f ‘/usr/local/programs/google-cloud-sdk/completion.bash.inc’ ]; then . ‘/usr/local/programs/google-cloud-sdk/completion.bash.inc’; fi
 [[ -r “/usr/local/etc/profile.d/bash_completion.sh” ]] && . “/usr/local/etc/profile.d/bash_completion.sh”
 
+# Set CAPS to CTRL on laptop
+if [ $HOSTNAME == 'X230-i7' ]; then
+    /usr/bin/setxkbmap -option "ctrl:nocaps"
+fi
+
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
