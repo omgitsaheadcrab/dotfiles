@@ -209,7 +209,7 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 # bar {
 # 	status_command i3status
 # 	font pango:monospace 9
-        
+
 # 	colors {
 # 		background $bg-color
 # 	    	separator #757575
@@ -228,8 +228,8 @@ for_window [class="Kalu"] floating enable
 # Multimedia Keys
 
 # volume
-bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ 
-bindsym XF86AudioLowerVolume exec amixer sset Master 5%- 
+bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+
+bindsym XF86AudioLowerVolume exec amixer sset Master 5%-
 
 # granular volume control
 #bindsym $mod+XF86AudioRaiseVolume exec amixer -D pulse sset Master 1%+ && pkill -RTMIN+1 i3blocks
@@ -293,15 +293,16 @@ assign [class="(?i)vlc"] $WS7
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable move right 420px,move up 155px
 
-#bindsym $mod+p exec "i3-msg 'workspace 3: ; append_layout /home/odin/.config/i3/layouts/writephd.json; exec emacs; exec evince; exec terminator'" 
+#bindsym $mod+p exec "i3-msg 'workspace 3: ; append_layout /home/odin/.config/i3/layouts/writephd.json; exec emacs; exec evince; exec terminator'"
 
 
 # Autostart apps
+#exec --no-startup-id systemctl --user start pscircle
 exec --no-startup-id ~/.config/polybar/run_polybar.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id "nitrogen --restore"
-exec --no-startup-id nm-applet				    # NetworkManager 
+exec --no-startup-id nm-applet				    # NetworkManager
 exec --no-startup-id /usr/bin/dropbox start -i              # Dropbox
 exec --no-startup-id /usr/bin/blueman-applet                # Bluetooth Manager
-exec --no-startup-id compton --backend glx --paint-on-overlay --vsync opengl-swc -o 0
+exec --no-startup-id picom --backend glx -o 0
 #exec --no-startup-id "sleep 4s && kalu"
