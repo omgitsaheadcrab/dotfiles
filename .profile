@@ -25,6 +25,14 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+export XDG_BIN_HOME="$HOME/.local/bin"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_LIB_HOME="$HOME/.local/lib"
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+
+xrdb -load ~/.config/X11/Xresources
 
 PATH=$PATH:/usr/local/programs/google-cloud-sdk/bin:$HOME/.local/bin
 
