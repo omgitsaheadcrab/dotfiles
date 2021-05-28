@@ -32,6 +32,8 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_LIB_HOME="$HOME/.local/lib"
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export NOTMUCH_CONFIG="$XDG_CONFIG_HOME"/notmuch/config
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
 xrdb -load ~/.config/X11/Xresources
 
@@ -48,5 +50,5 @@ if [ $HOSTNAME == 'X230-i7' ]; then
     /usr/bin/setxkbmap -option "ctrl:nocaps"
 fi
 
-eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
