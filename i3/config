@@ -38,7 +38,7 @@ bindsym $mod+e exec emacsclient -nc
 bindsym Mod1+F4 kill
 
 # start dmenu (a program launcher)
-bindsym Mod1+F2 exec --no-startup-id rofi -combi-modi window
+bindsym Mod1+F2 exec --no-startup-id rofi -combi-modi window#drun#ssh -theme oxide -show drun -show-icons
 
 # change focus
 bindsym $mod+j focus left
