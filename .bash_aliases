@@ -4,6 +4,8 @@ alias cls='clear; ls'
 alias emacs='emacsclient -nw'
 alias tmux='TERM=xterm-256color tmux'
 alias gh='ssh-add ~/.ssh/github'
+alias pacrepo='sudo reflector -l 20 -f 10 --save /etc/pacman.d/mirrorlist'
+
 
 # work
 alias tester='/home/odin/yreceipts/yreceipts.com/utilities/tester/tester.py'
