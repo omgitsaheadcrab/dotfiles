@@ -6,9 +6,9 @@ font-0 = "DejaVuSans-Bold:size=9;2"
 font-1 = "Material Icons:size=10;2"
 font-2 = "Hack:size=10;2"
 font-3 = "Wuncon Siji:pixelsize=10;2"
-font-4 = "Font Awesome 5 Free:style=regular:size=10;2"
-font-5 = "Font Awesome 5 Free:style=solid:size=10;2"
-font-6 = "Font Awesome 5 Brands:size=10;2"
+font-4 = "Font Awesome 6 Free:style=regular:size=10;2"
+font-5 = "Font Awesome 6 Free:style=solid:size=10;2"
+font-6 = "Font Awesome 6 Brands:size=10;2"
 font-7 = "Ionicons:style=Medium:size=10;2"
 
 [colors]
@@ -39,7 +39,7 @@ font-5 = ${fonts.font-5}
 font-6 = ${fonts.font-6}
 font-7 = ${fonts.font-7}
 
-modules-left = 
+modules-left =
 modules-center = date
 modules-right = volume backlight battery
 
@@ -172,7 +172,7 @@ type = internal/battery
 full-at = 98
 
 format-charging = <animation-charging>
-format-discharging = <ramp-capacity> 
+format-discharging = <ramp-capacity>
 format-full = <ramp-capacity>
 
 ; Only applies if <ramp-capacity> is used
