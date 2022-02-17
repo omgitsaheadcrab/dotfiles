@@ -235,6 +235,7 @@ for_window [class="entt_dino"] floating enable
 
 
 # Autostart apps
+exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 exec --no-startup-id ~/.config/polybar/run_polybar.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id "nitrogen --restore"
