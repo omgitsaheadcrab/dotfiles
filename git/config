@@ -6,7 +6,9 @@
 [core]
 	editor = emacsclient -nw
 [pull]
-	rebase = false
+	rebase = true
+[push]
+    autoSetupRemote = true
 [sendemail]
     confim = auto
 	smtpserver = smtp.gmail.com
@@ -24,3 +26,8 @@
         diff = auto
         interactive = auto
         status = auto
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
+[credential "https://git.overleaf.com"]
+    username = t.backerdirks@gmail.com
+    helper = "!f() { test \"$1\" = get && echo \"password=$(gpg2 -q --for-your-eyes-only --no-tty -d ~/.authinfo.gpg | awk '/machine git.overleaf.com login t.backerdirks@gmail.com/ {print $NF}')\"; }; f"
