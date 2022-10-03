@@ -1,24 +1,24 @@
 [general]
-monitor = LVDS1
+monitor-left = DisplayPort-0
+monitor-right = DisplayPort-1
 
 [fonts]
 font-0 = "DejaVuSans-Bold:size=9;2"
 font-1 = "Material Icons:size=10;2"
 font-2 = "Hack:size=10;2"
-font-3 = "Wuncon Siji:pixelsize=10;2"
-font-4 = "Font Awesome 6 Free:style=regular:size=10;2"
-font-5 = "Font Awesome 6 Free:style=solid:size=10;2"
-font-6 = "Font Awesome 6 Brands:size=10;2"
-font-7 = "Ionicons:style=Medium:size=10;2"
+font-3 = "Font Awesome 6 Free:style=regular:size=10;2"
+font-4 = "Font Awesome 6 Free:style=solid:size=10;2"
+font-5 = "Font Awesome 6 Brands:size=10;2"
+font-6 = "Ionicons:style=Medium:size=10;2"
 
 [colors]
 fg = #ffffff
-bg = #0000000
+bg = #000000
 unfocused = #555555
 
-[bar/top]
+[bar/top-left]
 enable-ipc = true
-monitor = ${general.monitor}
+monitor = ${general.monitor-left}
 width = 100%
 height = 18
 border-size = 0
@@ -37,17 +37,45 @@ font-3 = ${fonts.font-3}
 font-4 = ${fonts.font-4}
 font-5 = ${fonts.font-5}
 font-6 = ${fonts.font-6}
-font-7 = ${fonts.font-7}
 
 modules-left =
 modules-center = date
-modules-right = volume backlight battery
+modules-right =
 
 override-redirect = true
 wm-restack = i3
 
-[bar/bottom]
-monitor = ${general.monitor}
+[bar/top-right]
+enable-ipc = true
+monitor = ${general.monitor-right}
+width = 100%
+height = 18
+border-size = 0
+offset-y = 0
+background = ${colors.bg}
+
+padding-left = 0
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 0
+
+font-0 = ${fonts.font-0}
+font-1 = ${fonts.font-1}
+font-2 = ${fonts.font-2}
+font-3 = ${fonts.font-3}
+font-4 = ${fonts.font-4}
+font-5 = ${fonts.font-5}
+font-6 = ${fonts.font-6}
+
+modules-left =
+modules-center = date
+modules-right = volume
+
+override-redirect = true
+wm-restack = i3
+
+[bar/bottom-left]
+monitor = ${general.monitor-left}
 bottom = true
 width = 100%
 height = 20
@@ -68,7 +96,38 @@ font-3 = ${fonts.font-3}
 font-4 = ${fonts.font-4}
 font-5 = ${fonts.font-5}
 font-6 = ${fonts.font-6}
-font-7 = ${fonts.font-7}
+
+modules-left =
+modules-center = i3
+modules-right =
+
+override-redirect = true
+wm-restack = i3
+
+interactive = true
+
+[bar/bottom-right]
+monitor = ${general.monitor-right}
+bottom = true
+width = 100%
+height = 20
+background = ${colors.bg}
+
+border-size = 0
+
+spacing = 3
+padding-left = 0
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = ${fonts.font-0}
+font-1 = ${fonts.font-1}
+font-2 = ${fonts.font-2}
+font-3 = ${fonts.font-3}
+font-4 = ${fonts.font-4}
+font-5 = ${fonts.font-5}
+font-6 = ${fonts.font-6}
 
 tray-position = right
 tray-detatched = false
@@ -80,18 +139,8 @@ modules-right =
 override-redirect = true
 wm-restack = i3
 
-[module/backlight]
-type = internal/xbacklight
-output = ${general.monitor}
-format = <ramp>
-ramp-0 = 
-ramp-0-foreground = ${colors.fg}
-ramp-1 = 
-ramp-1-foreground = ${colors.fg}
-ramp-2 = 
-ramp-2-foreground = ${colors.fg}
-
 interactive = true
+
 
 [module/i3]
 type = internal/i3
@@ -126,15 +175,17 @@ label-urgent-background = ${colors.bg}
 label-urgent-padding = 1
 label-urgent-overline = ${colors.unfocused}
 ws-icon-0 = 1;
-ws-icon-1 = 2;
+ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
 ws-icon-5 = 6;
 ws-icon-6 = 7;
-ws-icon-7 = 8;
+ws-icon-7 = 8;
 ws-icon-8 = 9;
 ws-icon-9 = 10;
+
+label-visible = %icon%
 
 [module/date]
 type = internal/date
@@ -165,37 +216,3 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-foreground = ${colors.fg}
-
-
-[module/battery]
-type = internal/battery
-full-at = 98
-
-format-charging = <animation-charging>
-format-discharging = <ramp-capacity>
-format-full = <ramp-capacity>
-
-; Only applies if <ramp-capacity> is used
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-
-; Only applies if <animation-charging> is used
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-; Framerate in milliseconds
-animation-charging-framerate = 750
-
-; Only applies if <animation-discharging> is used
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-3 = 
-animation-discharging-4 = 
-; Framerate in milliseconds
-animation-discharging-framerate = 500

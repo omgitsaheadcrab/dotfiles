@@ -7,7 +7,9 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch top and bottom
-polybar -c ~/.config/polybar/simple-black top &
-polybar -c ~/.config/polybar/simple-black bottom &
+FC_DEBUG=0 polybar -c ~/.config/polybar/simple-black top-left &
+FC_DEBUG=0 polybar -c ~/.config/polybar/simple-black bottom-left &
+FC_DEBUG=0 polybar -c ~/.config/polybar/simple-black top-right &
+FC_DEBUG=0 polybar -c ~/.config/polybar/simple-black bottom-right &
 
 echo "Bars launched..."
