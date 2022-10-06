@@ -7,6 +7,8 @@
     cursor_color = "#aaaaaa"
     font = Hack 9
     show_titlebar = False
+    scrollback_lines = 0
+    scrollback_infinite = True
     login_shell = True
     use_system_font = False
 [layouts]
