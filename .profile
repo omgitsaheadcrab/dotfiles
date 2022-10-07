@@ -38,14 +38,6 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 
 xrdb -load ~/.config/X11/Xresources
 
-PATH=$PATH:/usr/local/programs/google-cloud-sdk/bin:$HOME/.local/bin
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f ‘/usr/local/programs/google-cloud-sdk/path.bash.inc’ ]; then . ‘/usr/local/programs/google-cloud-sdk/path.bash.inc’; fi
-# The next line enables shell command completion for gcloud.
-if [ -f ‘/usr/local/programs/google-cloud-sdk/completion.bash.inc’ ]; then . ‘/usr/local/programs/google-cloud-sdk/completion.bash.inc’; fi
-[[ -r “/usr/local/etc/profile.d/bash_completion.sh” ]] && . “/usr/local/etc/profile.d/bash_completion.sh”
-
 # Set CAPS to CTRL on laptop
 if [ $HOSTNAME == 'X230-i7' ]; then
     /usr/bin/setxkbmap -option "ctrl:nocaps"
