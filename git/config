@@ -1,0 +1,33 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+  	name = Tobias Backer Dirks
+	email = omgitsaheadcrab@gmail.com
+[core]
+	editor = emacsclient -nw
+[pull]
+	rebase = true
+[push]
+    autoSetupRemote = true
+[sendemail]
+    confim = auto
+	smtpserver = smtp.gmail.com
+	smtpserverport = 587
+	smtpencryption = tls
+	smtpuser = omgitsaheadcrab@gmail.com
+
+[include]
+    path = config.local
+[alias]
+        lol = log --graph --decorate --pretty=oneline --abbrev-commit
+        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[color]
+        branch = auto
+        diff = auto
+        interactive = auto
+        status = auto
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
+[credential "https://git.overleaf.com"]
+    username = t.backerdirks@gmail.com
+    helper = "!f() { test \"$1\" = get && echo \"password=$(gpg2 -q --for-your-eyes-only --no-tty -d ~/.authinfo.gpg | awk '/machine git.overleaf.com login t.backerdirks@gmail.com/ {print $NF}')\"; }; f"
