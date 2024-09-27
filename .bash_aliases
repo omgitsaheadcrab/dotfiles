@@ -3,13 +3,15 @@ alias ls='ls -CF --color=always'
 alias cls='clear; ls'
 alias emacs='emacsclient -nw'
 alias tmux='TERM=xterm-256color tmux'
-alias gh='ssh-add ~/.ssh/github'
+alias gh='ssh-add -D; ssh-add ~/.ssh/github'
+alias ghw='ssh-add -D; ssh-add ~/.ssh/github_candosa'
 alias lint='cpplint --root=.. src/**/*.{cc,h}'
 alias vgrind='valgrind -v --tool=memcheck --leak-check=full --track-origins=yes --show-reachable=no ./bin/entt_dino'
 alias pacrepo='sudo reflector -l 20 -f 10 --save /etc/pacman.d/mirrorlist'
-
+alias drun='docker run -it --network=host --device=/dev/kfd --device=/dev/dri --group-add=video --ipc=host --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -v $(pwd):/pwd'
 
 # work
 alias tester='/home/odin/yreceipts/yreceipts.com/utilities/tester/tester.py'
 alias yr='tmuxp load ~/.config/tmuxp/yreceipts.yaml'
 alias yr-nw='tmuxp load ~/.config/tmuxp/yreceipts-nw.yaml'
+alias devappserver='python3 /usr/local/programs/google-cloud-sdk/bin/dev_appserver.py --support_datastore_emulator=False app.yaml'

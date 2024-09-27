@@ -38,7 +38,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 
 xrdb -load ~/.config/X11/Xresources
 
-PATH=$PATH:/usr/local/programs/google-cloud-sdk/bin:$HOME/.local/bin
+PATH=$PATH:/usr/local/programs/google-cloud-sdk/bin:$HOME/.local/bin:/home/odin/.local/share/cargo/bin
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f ‘/usr/local/programs/google-cloud-sdk/path.bash.inc’ ]; then . ‘/usr/local/programs/google-cloud-sdk/path.bash.inc’; fi

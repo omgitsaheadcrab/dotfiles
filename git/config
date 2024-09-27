@@ -1,8 +1,14 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-  	name = Tobias Backer Dirks
+	name = Tobias Backer Dirks
+	email = tobias@candosa.com
+[personal]
+	name = Tobias Backer Dirks
 	email = omgitsaheadcrab@gmail.com
+[work]
+	name = Tobias Backer Dirks
+	email = tobias@candosa.com
 [core]
 	editor = emacsclient -nw
 [pull]
@@ -31,3 +37,7 @@
 [credential "https://git.overleaf.com"]
     username = t.backerdirks@gmail.com
     helper = "!f() { test \"$1\" = get && echo \"password=$(gpg2 -q --for-your-eyes-only --no-tty -d ~/.authinfo.gpg | awk '/machine git.overleaf.com login t.backerdirks@gmail.com/ {print $NF}')\"; }; f"
+[alias]
+    whoami= !git config --global user.name && git config --global user.email
+	setpersonal= !git config --global user.name \""$(git config personal.name)"\" && git config --global user.email "$(git config personal.email)" && git whoami
+	setwork= !git config --global user.name \""$(git config work.name)"\" && git config --global user.email "$(git config work.email)" && git whoami

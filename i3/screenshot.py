@@ -1,5 +1,4 @@
-#!/usr/bin/env python2.7
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python
 
 """ Use in i3wm with:
 Save as screeshot.py somewhere into your PATH
