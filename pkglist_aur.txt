@@ -1,0 +1,7 @@
+brave-bin
+docker-desktop
+dockerfile-language-server
+en-croissant-bin
+ngrok
+nodejs-nestjs-cli
+wacom-settings-git
