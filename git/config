@@ -2,7 +2,7 @@
 [user]
 # Please adapt and uncomment the following lines:
 	name = Tobias Backer Dirks
-	email = tobias@candosa.com
+	email = omgitsaheadcrab@gmail.com
 [personal]
 	name = Tobias Backer Dirks
 	email = omgitsaheadcrab@gmail.com
@@ -32,8 +32,6 @@
         diff = auto
         interactive = auto
         status = auto
-[url "ssh://git@github.com/"]
-    insteadOf = https://github.com/
 [credential "https://git.overleaf.com"]
     username = t.backerdirks@gmail.com
     helper = "!f() { test \"$1\" = get && echo \"password=$(gpg2 -q --for-your-eyes-only --no-tty -d ~/.authinfo.gpg | awk '/machine git.overleaf.com login t.backerdirks@gmail.com/ {print $NF}')\"; }; f"
@@ -41,3 +39,14 @@
     whoami= !git config --global user.name && git config --global user.email
 	setpersonal= !git config --global user.name \""$(git config personal.name)"\" && git config --global user.email "$(git config personal.email)" && git whoami
 	setwork= !git config --global user.name \""$(git config work.name)"\" && git config --global user.email "$(git config work.email)" && git whoami
+# Enforce SSH
+# [url "ssh://git@github.com/"]
+# 	insteadOf = https://github.com/
+[url "ssh://git@gitlab.com/"]
+	insteadOf = https://gitlab.com/
+[url "ssh://git@bitbucket.org/"]
+	insteadOf = https://bitbucket.org/
+[credential]
+	helper = store
+[init]
+	defaultBranch = main
